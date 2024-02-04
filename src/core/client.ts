@@ -1,7 +1,9 @@
 import axios, { AxiosInstance } from "axios";
 
 import { ClientOptions, Tokens } from "../types/client";
+
 import TimetableEntry from "../models/timetable_entry";
+import MarkClass from "../models/mark_class";
 
 export default class AurionClient {
 
@@ -32,7 +34,7 @@ export default class AurionClient {
         this.tokens = response.data;
         this.client = this.getClient();
 
-        console.log(this.tokens);
+        return;
     }
 
     async getTimetable(startDate: Date, endDate: Date): Promise<TimetableEntry[]> {
@@ -45,16 +47,18 @@ export default class AurionClient {
         return entries;
     }
 
-    async getMarks(): Promise<any> {
+    async getMarks(): Promise<MarkClass[]> {
         const response = await this.client.get('/mes_notes');
+        const result = response.data.map((mark: any) => new MarkClass(mark));
 
-        return response.data;
+        return result;
     }
 
     async getAbsences(): Promise<any> {
         const response = await this.client.get('/mes_absences');
+        const result = response.data;
 
-        return response.data;
+        return result;
     }
 
 }
