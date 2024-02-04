@@ -92,11 +92,12 @@ var TimetableEntry = class {
 // src/models/mark.ts
 var Mark = class {
   constructor(data) {
+    var _a;
     this.id = data.id;
     this.name = data.libelle;
     this.startDate = new Date(data.date_debut_evt);
     this.obtentionDate = new Date(data.date_obtention);
-    this.professors = data.intervenants.split(", ");
+    this.professors = ((_a = data.intervenants) == null ? void 0 : _a.split(", ")) || [];
     this.value = parseFloat(data.note);
     this.appreciation = data.appreciation;
     this.absence = data.est_absent;
@@ -120,10 +121,11 @@ var Mark = class {
 var MarkClass = class {
   constructor(data) {
     this.marks = [];
+    var _a;
     this.id = data.id;
     this.code = data.cours_code;
     this.name = data.cours_libelle;
-    this.professors = data.intervenants.split(", ");
+    this.professors = ((_a = data.intervenants) == null ? void 0 : _a.split(", ")) || [];
     this.average = parseFloat(data.inscription_cours.moyenne);
     this.credits = {
       obtained: parseInt(data.inscription_cours.nombre_credits_obtenus),

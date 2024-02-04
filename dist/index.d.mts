@@ -40,10 +40,10 @@ declare class Mark {
     startDate: Date;
     obtentionDate: Date;
     professors: string[];
-    value: number;
-    appreciation: string;
-    absence: boolean;
-    notRated: boolean;
+    value?: number;
+    appreciation?: string;
+    absence?: boolean;
+    notRated?: boolean;
     constructor(data: any);
     toJSON(): {
         id: string;
@@ -51,9 +51,9 @@ declare class Mark {
         startDate: Date;
         obtentionDate: Date;
         professors: string[];
-        value: number;
-        absence: boolean;
-        notRated: boolean;
+        value: number | undefined;
+        absence: boolean | undefined;
+        notRated: boolean | undefined;
     };
 }
 
@@ -87,9 +87,9 @@ declare class MarkClass {
             startDate: Date;
             obtentionDate: Date;
             professors: string[];
-            value: number;
-            absence: boolean;
-            notRated: boolean;
+            value: number | undefined;
+            absence: boolean | undefined;
+            notRated: boolean | undefined;
         }[];
     };
 }

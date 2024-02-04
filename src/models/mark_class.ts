@@ -25,8 +25,8 @@ export default class MarkClass {
             obtained: parseInt(data.inscription_cours.nombre_credits_obtenus),
             total: parseInt(data.inscription_cours.nombre_credits_potentiels)
         }
-        this.validated = data.inscription_cours.validated;
 
+        this.validated = data.inscription_cours.est_validee;
         this.marks = data.epreuves.map((mark: any) => new Mark(mark));
     }
 
