@@ -6,18 +6,18 @@ export default class Mark {
     public obtentionDate: Date;
     public professors: string[];
 
-    public value: number;
-    public appreciation: string;
+    public value?: number;
+    public appreciation?: string;
 
-    public absence: boolean;
-    public notRated: boolean;
+    public absence?: boolean;
+    public notRated?: boolean;
 
     constructor(data: any) {
         this.id = data.id;
         this.name = data.libelle;
         this.startDate = new Date(data.date_debut_evt);
         this.obtentionDate = new Date(data.date_obtention);
-        this.professors = data.intervenants.split(', ');
+        this.professors = data.intervenants?.split(', ') || [];
         this.value = parseFloat(data.note);
         this.appreciation = data.appreciation;
         this.absence = data.est_absent;
