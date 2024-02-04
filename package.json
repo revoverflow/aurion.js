@@ -1,6 +1,6 @@
 {
   "name": "aurion",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Client for Aurion API, a french school management software",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

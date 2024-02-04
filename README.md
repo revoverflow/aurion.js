@@ -35,5 +35,5 @@ client.login('john.doe@example.com', 'password')
 
 - [x] Authentication
 - [x] Timetable
-- [ ] Grades
+- [x] Grades
 - [ ] Absences
