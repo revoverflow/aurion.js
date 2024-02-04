@@ -19,7 +19,7 @@ export default class MarkClass {
         this.id = data.id;
         this.code = data.cours_code;
         this.name = data.cours_libelle;
-        this.professors = data.intervenants.split(', ');
+        this.professors = data.intervenants?.split(', ') || [];
         this.average = parseFloat(data.inscription_cours.moyenne);
         this.credits = {
             obtained: parseInt(data.inscription_cours.nombre_credits_obtenus),
