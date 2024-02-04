@@ -9,7 +9,7 @@ This library is using the mobile API of Aurion, which is a REST API instead of t
 Here is an example of how to use the library to get the timetable of a user.
 
 ```javascript
-const { AurionClient } = require('aurion.js');
+const { AurionClient } = require('aurion');
 
 // Configure the client with the mobile API URL and your tokens
 const client = new AurionClient({
